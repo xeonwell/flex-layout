@@ -1,4 +1,4 @@
-@flex-column: 24;
+@flex-item-num: 24;
 
 .flex-clearfix() {
 	&:before, &:after {
@@ -14,15 +14,15 @@
 	}
 }
 
-.flex-column, .flex-row {
+.flex-row, .flex-column {
 	display: flex;
 	flex-wrap: wrap;
 	.flex-clearfix();
 }
-.flex-column {
+.flex-row {
 	flex-direction: row;
 }
-.flex-row {
+.flex-column {
 	flex-direction: column;
 }
 .flex-around {
@@ -50,12 +50,12 @@
 	// 栅格
 	.flex-item-@{i} {
 		float: left;
-		width: percentage(@i / @flex-column);
+		width: percentage(@i / @flex-item-num);
 	}
 	
 	// 向左偏移
 	.flex-offset-@{i} {
-		margin-left: percentage(@i / @flex-column);
+		margin-left: percentage(@i / @flex-item-num);
 	}
 	
 	// 排序
@@ -64,9 +64,9 @@
 	}
 }
 
-.build-item(@flex-column);
+.build-item(@flex-item-num);
 
-// flex-row的对齐方式
+// flex-column的对齐方式
 .build-align(@type) when (@type = row) {
 	&.flex-left {
 		align-items: flex-start;
@@ -87,7 +87,7 @@
 		justify-content: center;
 	}
 }
-// flex-column的对齐方式
+// flex-row的对齐方式
 .build-align(@type) when (@type = column) {
 	&.flex-left {
 		justify-content: flex-start;
@@ -109,10 +109,10 @@
 	}
 }
 
-.flex-column {
+.flex-row {
 	.build-align(column);
 }
-.flex-row {
+.flex-column {
 	.build-align(row);
 }
 
@@ -139,7 +139,7 @@
 	}
 }
 
-.flex-sm-show, .flex-md-show {
+/* .flex-sm-show, .flex-md-show {
 	display: none;
 }
 
@@ -175,7 +175,7 @@
 	.flex-sm-show {
 		display: flex !important;
 	}
-}
+} */
 
 
 
