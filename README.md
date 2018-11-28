@@ -36,4 +36,4 @@ flex-column: 容器里的[栅格]以竖向排列，就像header、content、foot
 
 MIT
 
-[1]: http://coffcer.github.io/flex-layout/
+[1]: http://flex-layout.xw.hb.cn
